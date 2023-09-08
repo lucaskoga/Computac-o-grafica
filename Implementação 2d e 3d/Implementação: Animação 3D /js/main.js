@@ -1,7 +1,7 @@
-import * as THREE from 'three'
+import * as THREE from 'three';
 import { OrbitControls } from 'https://unpkg.com/three/examples/jsm/controls/OrbitControls';
 import { OBJLoader } from 'https://unpkg.com/three@0.138.0/examples/jsm/loaders/OBJLoader.js';
-import { MTLLoader } from 'https://unpkg.com/three@0.138.0/examples/jsm/loaders/MTLLoader.js'; // Corrigi o caminho do MTLLoader.
+import { MTLLoader } from 'https://unpkg.com/three@0.138.0/examples/jsm/loaders/MTLLoader.js';
 
 const renderer = new THREE.WebGLRenderer();
 renderer.setSize(window.innerWidth, window.innerHeight);
@@ -17,12 +17,23 @@ const camera = new THREE.PerspectiveCamera(
     2000
 );
 
-camera.position.set(0, 0, 1000); 
+camera.position.set(0, 0, 1000);
 
 const controls = new OrbitControls(camera, renderer.domElement);
 controls.enableDamping = true;
 controls.dampingFactor = 0.25;
 controls.enableZoom = true;
+
+const keyboard = {};
+const cameraSpeed = 5;
+
+document.addEventListener('keydown', (event) => {
+    keyboard[event.key] = true;
+});
+
+document.addEventListener('keyup', (event) => {
+    keyboard[event.key] = false;
+});
 
 const light1 = new THREE.PointLight(0xc4c4c4, 1);
 light1.position.set(0, 300, 500);
@@ -158,9 +169,26 @@ function rotateObjects() {
 
 const animate = function animate() {
     requestAnimationFrame(animate);
-    rotateObjects()
+    rotateObjects();
+
+    if (keyboard['w']) {
+        camera.position.z -= cameraSpeed;
+    }
+
+    if (keyboard['s']) {
+        camera.position.z += cameraSpeed;
+    }
+
+    if (keyboard['a']) {
+        camera.position.x -= cameraSpeed;
+    }
+
+    if (keyboard['d']) {
+        camera.position.x += cameraSpeed;
+    }
+
     controls.update();
     renderer.render(scene, camera);
-}
+};
 
 animate();
