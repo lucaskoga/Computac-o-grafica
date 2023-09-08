@@ -1,2 +1,15 @@
 Alunos: Lucas Renato Hiroshi Koga, Eduardo Paduan,
-Nesse Repositorio contem dois trabalho de computação grafica, uma implementação de um jogo 2d feito com o canvar e o weblg utilizando o requestAnimationFrame como motor grafico, e outro implementação em 3d de três objetos e alguma animação também utilizando o requestAnimationFrame como motor grafico.
+
+Nesse Repositório contem dois trabalho de computação gráfica, uma implementação de um jogo 2d feito com o canvar e o weblg utilizando o requestAnimationFrame como motor gráfico, e outro implementação em 3d de três objetos e alguma animação também utilizando o requestAnimationFrame como motor gráfico.
+
+Implementação do jogo em 2d
+  E um jogo de cobrinha implementado utilizando o htlm5 e canvas, o jogo e rodado no navegador, basicamente temos um bloco criado em canvas e é nessa área onde o jogo e renderizado, nesse senário que vamos ter o lugar onde a cobrinha vai poder se locomover para mover a cobrinha foi desenvolvido uma função javascript que e responsável por fazer a movimentação da cobrinha, além da função da cobrinha temos uma temos a função responsável por quando a cobrinha comer a comida dela ela aumenta seu tamanha e toca uma musiquinha com um barulho de mordida
+  E para fazer a geração de comida temos uma função responsável por fazer a geração dos alimentos aleatórios pelo mapa.
+  Para parecer igual ao jogo temos uma função de colisão nessa função entra em ação sempre que a cobra entra na área de colisão das parede o jogo e finalizado, temos uma função nesse momento para quando a cobrinha morrer tocar uma musiquinha responsável por além de avisar que morreu, simbolizar tristeza por ter morrido.
+  E claro quando for iniciado o jogo apertando o botão iniciar na tela o jogo começa, e sempre vai ser iniciado em posição diferente.
+  Todas essas funções desenvolvida foi para tornar o jogo mais realista em comparação a os ja criado e a forma de animação dela e utilizando o RequestAnimationFrama do WebGL.
+
+Implementação 3d
+  A implementação 3d código JavaScript que utiliza a biblioteca Three.js para criar uma cena 3D interativa no navegador, nesta implementação temos o arquivo "index.html" que e responsável por fazer a iniciação da animação 3d e também responsável por fazer outras configurações, temos também o arquivo "styles.css" que fica responsável por fazer o ajuste da tela do canvas, o local que foi desenvolvido implementação e o "main.js" dentro desse arquivos temos as funções para criar o senário renderizar o senário alem das função de fazer a movimentação do objetos lá no navegar.
+  Depois foi instanciado os efeito de fuz de ambiente dentro do navegador, com os efeito instanciados foi colocado o objetos 3d que desejamos visualizar no nosso ambiente o método que usamos para pegar a imagem e abrir ela com a texturas foi utilizando o OBJLoader e o MTLLoard, foi usando essa funções que foi iniciado as imagem no ambiente.
+  Juntos dos 3 objetos ainda temos um uma plataforma que foi criado para ficar em baixo de cada objeto, e para finalizar foi feito uma função responsável por fazer a animação dos objetos, e dentro dessa função foi chamado uma outra função para fazer a animação dos objetos que estão no ambiente e o motor gráfico usado para essa implementação foi o RequestAnimationFrame junto junto com o three.js
