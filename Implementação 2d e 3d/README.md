@@ -1,4 +1,4 @@
-Alunos: Lucas Renato Hiroshi Koga, Eduardo Paduan,
+Alunos: Lucas Renato Hiroshi Koga, Eduardo Paduan.
 
 Nesse Repositório contem dois trabalho de computação gráfica, uma implementação de um jogo 2d feito com o canvar e o weblg utilizando o requestAnimationFrame como motor gráfico, e outro implementação em 3d de três objetos e alguma animação também utilizando o requestAnimationFrame como motor gráfico.
 
