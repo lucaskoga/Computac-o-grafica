@@ -1,7 +1,7 @@
 import * as THREE from 'three'
 import { OrbitControls } from 'https://unpkg.com/three/examples/jsm/controls/OrbitControls';
 import { OBJLoader } from 'https://unpkg.com/three@0.138.0/examples/jsm/loaders/OBJLoader.js';
-import { MTLLoader } from 'https://unpkg.com/three@0.138.0/examples/jsm/loaders/MTLLoader.js'; // Corrigi o caminho do MTLLoader.
+import { MTLLoader } from 'https://unpkg.com/three@0.138.0/examples/jsm/loaders/MTLLoader.js';
 
 const renderer = new THREE.WebGLRenderer();
 renderer.setSize(window.innerWidth, window.innerHeight);
@@ -20,7 +20,7 @@ camera.position.set(0, 0, 1000); // Ajustei a posição da câmera para melhor v
 
 const controls = new OrbitControls(camera, renderer.domElement);
 controls.enableDamping = true;
-controls.dampingFactor = 0.25; // Corrigi o nome da propriedade dampingFactor.
+controls.dampingFactor = 0.25;
 controls.enableZoom = true;
 
 const light1 = new THREE.PointLight(0xc4c4c4, 1);
@@ -44,8 +44,8 @@ mtlloader.load('Hologramm.mtl', (materials) => {
     materials.preload();
     
     const objLoader = new OBJLoader();
-    objLoader.setMaterials(materials); // Agora está no lugar correto.
-    objLoader.setPath('./img/'); // Ajustei o caminho para o diretório onde está o arquivo
+    objLoader.setMaterials(materials);
+    objLoader.setPath('./img/');
     objLoader.load(
         'Hologramm.obj',
         (object) => {
@@ -72,8 +72,8 @@ mtlloader.load('Heli_bell.mtl', (materials) => {
     materials.preload();
     
     const objLoader = new OBJLoader();
-    objLoader.setMaterials(materials); // Agora está no lugar correto.
-    objLoader.setPath('./img/'); // Ajustei o caminho para o diretório onde está o arquivo
+    objLoader.setMaterials(materials);
+    objLoader.setPath('./img/');
     objLoader.load(
         'Heli_bell.obj',
         (object) => {
@@ -101,8 +101,8 @@ mtlloader.load('Futuristi.mtl', (materials) => {
     materials.preload();
     
     const objLoader = new OBJLoader();
-    objLoader.setMaterials(materials); // Agora está no lugar correto.
-    objLoader.setPath('./img/'); // Ajustei o caminho para o diretório onde está o arquivo
+    objLoader.setMaterials(materials);
+    objLoader.setPath('./img/');
     objLoader.load(
         'Futuristi.obj',
         (object) => {
@@ -126,14 +126,12 @@ mtlloader.load('Futuristi.mtl', (materials) => {
 });
 
 // Configuração da geometria e material da plataforma
-const plataformaGeometry = new THREE.BoxGeometry(500, 0, 500); // Dimensões: largura x altura x profundidade
+const plataformaGeometry = new THREE.BoxGeometry(500, 0, 500);
 const plataformaMaterial = new THREE.MeshBasicMaterial({ color: 0x888888 }); // Cor cinza
 
-// Criação da plataforma
 const plataforma = new THREE.Mesh(plataformaGeometry, plataformaMaterial);
 scene.add(plataforma);
 
-// Posicionamento da câmera
 camera.position.z = 20;
 
 function rotateObjects() {
