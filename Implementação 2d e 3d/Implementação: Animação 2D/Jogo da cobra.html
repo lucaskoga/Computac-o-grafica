@@ -50,14 +50,14 @@
         let gameRunning = false;
         let speed = 10;
         let minSnakeLengthForSpeedUp = 5;
-        let score = 0; // Contador de pontuação
+        let score = 0;
         let lastFrameTime = 0;
 
-        const frameInterval = 1000 / speed; // speed é o número de quadros por segundo
+        const frameInterval = 1000 / speed; // speed 
         const eatSound = document.getElementById("eatSound");
         const deathSound = document.getElementById("deathSound");
 
-        const scoreDisplay = document.getElementById("score"); // Elemento HTML para exibir a pontuação
+        const scoreDisplay = document.getElementById("score");
 
         function drawSnake() {
             snake.forEach(segment => {
@@ -81,8 +81,8 @@
                 if (snake.length > minSnakeLengthForSpeedUp) {
                     speed -= 10;
                 }
-                score++; // Incrementa a pontuação quando a cobra come
-                scoreDisplay.textContent = `Pontuação: ${score}`; // Atualiza o texto de exibição da pontuação
+                score++;
+                scoreDisplay.textContent = `Pontuação: ${score}`;
             } else {
                 snake.pop();
             }
